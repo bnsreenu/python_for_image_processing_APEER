@@ -28,7 +28,7 @@ print("Offset image was translated by: 18, -17")
 print("Pixels shifted by: ", xoff, yoff)
 
 from scipy.ndimage import shift
-corrected_image = shift(offset_image, shift=(xoff,yoff), mode='constant')
+corrected_image = shift(offset_image, shift=(-xoff,-yoff), mode='constant')
 
 from matplotlib import pyplot as plt
 fig = plt.figure(figsize=(10, 10))
@@ -64,7 +64,7 @@ print("Pixels shifted by: ", xoff, yoff)
 
 
 from scipy.ndimage import shift
-corrected_image = shift(offset_image, shift=(xoff,yoff), mode='constant')
+corrected_image = shift(offset_image, shift=(-xoff,-yoff), mode='constant')
 
 from matplotlib import pyplot as plt
 fig = plt.figure(figsize=(10, 10))
@@ -104,7 +104,7 @@ print("Pixels shifted by: ", xoff, yoff)
 
 
 from scipy.ndimage import shift
-corrected_image = shift(offset_image, shift=(xoff,yoff), mode='constant')
+corrected_image = shift(offset_image, shift=(-xoff,-yoff), mode='constant')
 
 from matplotlib import pyplot as plt
 fig = plt.figure(figsize=(10, 10))
@@ -151,7 +151,7 @@ print("Offset image was translated by: 18, -17")
 print("Pixels shifted by: ", xoff, yoff)
 
 from scipy.ndimage import shift
-corrected_image = shift(offset_image, shift=(xoff,yoff), mode='constant')
+corrected_image = shift(offset_image, shift=(-xoff,-yoff), mode='constant')
 
 
 #Example 2: Applying flow vectors to each pixel 
