@@ -52,9 +52,9 @@ from cv2_rolling_ball import subtract_background_rolling_ball
 from matplotlib import pyplot as plt
 
 img = cv2.imread("images/Particle_gradient.jpg", 0)
-
+img_rb=img.copy() ## Copy the image to prevent modifications on the original image
 radius=20
-final_img, background = subtract_background_rolling_ball(img, radius, light_background=True,
+final_img, background = subtract_background_rolling_ball(img_rb, radius, light_background=True,
                                      use_paraboloid=False, do_presmooth=True)
 
 
@@ -64,7 +64,7 @@ final_img, background = subtract_background_rolling_ball(img, radius, light_back
 clahe = cv2.createCLAHE(clipLimit=3, tileGridSize=(8,8))
 clahe_img = clahe.apply(final_img)
 
-#cv2.imshow("Original image", img)
+cv2.imshow("Original image", img)
 cv2.imshow("Background image", background)
 cv2.imshow("AFter background subtraction", final_img)
 cv2.imshow("After CLAHE", clahe_img)
